@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/m/category")
-public class CategoryManagerController {
+public class CategoryManageController {
 
     @Autowired
     private IUserService iUserService;

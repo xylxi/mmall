@@ -2,8 +2,6 @@ package com.mmall.dao;
 
 import com.mmall.pojo.Cart;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 /**
@@ -40,4 +38,6 @@ public interface CartMapper {
                                   @Param("productId") Integer productId);
 
     int selectCarProductCount(Integer userId);
+
+    List<Cart> selectCheckedCartByUserId(Integer userId);
 }
