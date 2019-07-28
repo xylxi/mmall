@@ -67,13 +67,13 @@ public class CategoryServiceImpl implements ICategoryService {
         return ServerResponse.createBySuccess(categoryList);
     }
 
-    public ServerResponse selectCategoryAndChildrenById(Integer categoryId) {
+    public ServerResponse<List<Integer>> selectCategoryAndChildrenById(Integer categoryId) {
         Set<Category> set = Sets.newHashSet();
-        List<Category> categoryList = Lists.newArrayList();
+        List<Integer> categoryList = Lists.newArrayList();
         if (categoryId != null) {
             findChildrenCategory(set, categoryId);
             for (Category category : set) {
-                categoryList.add(category);
+                categoryList.add(category.getId());
             }
         }
         return ServerResponse.createBySuccess(categoryList);
